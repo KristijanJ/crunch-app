@@ -12,10 +12,13 @@ import "../assets/styles/global.css";
 
 class App extends Component {
   componentDidMount() {
-    // Axios.get("URL")
-    //   .then(data => this.props.fetchRecipes(data))
+    // Axios.get("https://api.edamam.com/search?q=chicken&app_id=b0a95378&app_key=cd23993b4e04ca6248036c9ea01f9198")
+    //   .then(res => {
+    //     console.log(res.data.hits);
+    //     this.props.fetchRecipes(res.data.hits);
+    //   })
     //   .catch(error => console.error(error));
-    this.props.fetchRecipes(recipes);
+    this.props.fetchRecipes(recipes.results);
   }
 
   render() {

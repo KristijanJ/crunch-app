@@ -21,11 +21,18 @@ class Recipes extends Component {
         <h2>Recipes</h2>
 
         <div className="recipes">
-          <Slider {...settings}>
-            {this.props.recipes.map(recipe => (
-              <RecipeCard key={recipe.id} recipe={recipe} />
-            ))}
-          </Slider>
+          {this.props.recipes === undefined ? (
+            <>
+              <div className="loader">Loading...</div>
+              <h2>Loading...</h2>
+            </>
+          ) : (
+            <Slider {...settings}>
+              {this.props.recipes.map(recipe => (
+                <RecipeCard key={recipe.id} recipe={recipe} />
+              ))}
+            </Slider>
+          )}
         </div>
       </div>
     );

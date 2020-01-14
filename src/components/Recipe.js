@@ -11,7 +11,7 @@ class Recipe extends Component {
       this.props.fetchRecipe(this.props.recipes[this.props.match.params.id - 1]);
     } else {
       console.log('NEW FETCH PERFORMED')
-      this.props.fetchRecipe(recipes[this.props.match.params.id - 1]);
+      this.props.fetchRecipe(recipes.hits[this.props.match.params.id - 1]);
     }
   }
 
