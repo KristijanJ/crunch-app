@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button id="api-search">Search</button>
+    <button id="api-get-all">Get All</button>
+    <button id="api-get-one">Get One</button>
+    <script>
+      var search = document.querySelector("#api-search");
+      var getAll = document.querySelector("#api-get-all");
+      var getOne = document.querySelector("#api-get-one");
+
+      search.addEventListener("click", () => {
+        // API Search
+        var searchTerm = "chicken";
+        fetch(
+          `https://services.campbells.com/api/Recipes//recipe/search?q=${searchTerm}`,
+          {
+            method: "GET",
+            headers: {
+              "X-Api-Key": "39c8192811033a1a01b553bf2a645aa4", // THE! API key
+              Accept: "application/json"
+            }
+          }
+        )
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.log("Error!");
+            console.log(err);
+          });
+      });
+
+      getAll.addEventListener("click", () => {
+        // API Get All Recipes
+        fetch("http://services.campbells.com/api/Recipes//recipe", {
+          method: "get",
+          headers: {
+            "X-Api-Key": "0fb73d156cea7b85bb4acbed1e0af6fd", // THE! API key
+            Accept: "application/json"
+          }
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.log("Error!");
+            console.log(err);
+          });
+      });
+
+      getOne.addEventListener("click", () => {
+        // API Get Single recipe
+        var recipeID = 61702;
+        fetch(
+          `https://services.campbells.com/api/Recipes//recipe/${recipeID}`,
+          {
+            method: "get",
+            headers: {
+              "X-Api-Key": "0fb73d156cea7b85bb4acbed1e0af6fd", // THE! API key
+              Accept: "application/json"
+            }
+          }
+        )
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.log("Error!");
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>

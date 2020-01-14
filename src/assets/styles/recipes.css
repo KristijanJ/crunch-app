@@ -11,6 +11,7 @@
 }
 
 .recipes {
+  width: 90%;
   text-align: center;
   margin: auto;
 }
@@ -22,13 +23,11 @@
 }
 
 .recipe {
-  /* width: calc(33% - 32px); */
   margin: 16px;
   background: #fff;
   padding: 25px;
   border-radius: 25px;
   box-shadow: 5px 5px 10px #ddd;
-  /* float: left; */
 }
 
 .recipe .photo {
@@ -95,6 +94,6 @@
 
 /* SLICK */
 
-.slick-arrow, .slick-next, .slick-prev {
-  
+.dots {
+  background: red;
 }
