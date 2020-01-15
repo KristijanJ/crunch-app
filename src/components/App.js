@@ -12,13 +12,12 @@ import "../assets/styles/global.css";
 
 class App extends Component {
   componentDidMount() {
-    // Axios.get("https://api.edamam.com/search?q=chicken&app_id=b0a95378&app_key=cd23993b4e04ca6248036c9ea01f9198")
-    //   .then(res => {
-    //     console.log(res.data.hits);
-    //     this.props.fetchRecipes(res.data.hits);
-    //   })
-    //   .catch(error => console.error(error));
-    this.props.fetchRecipes(recipes.results);
+    Axios.get("https://api.spoonacular.com/recipes/search?query=chicken&apiKey=a8a78069d78b4d5d99564bbf6316dced")
+      .then(res => {
+        this.props.fetchRecipes(res.data.results);
+      })
+      .catch(error => console.error(error));
+    // this.props.fetchRecipes(recipes.results);
   }
 
   render() {

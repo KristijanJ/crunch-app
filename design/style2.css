@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat:300,400,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f5f5f5;
+}
+
 /* HEADER */
 
 .header {
@@ -29,16 +42,12 @@
   margin-left: 16px;
 }
 
-.header-content .logo span {
-  padding-left: 12px;
-}
-
 .header-content .logo i {
   font-size: 40px;
 }
 
 .header-content .search_user {
-  font-size: 24px;
+  font-size: 30px;
   color: #494843;
   float: right;
   margin-right: 16px;
@@ -52,3 +61,13 @@
 .header-content .search_user .search {
   border-right: 1px solid #494843;
 }
+
+/* RECIPE */
+
+.recipe-wrapper {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: red;
+}
+

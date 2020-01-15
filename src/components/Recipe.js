@@ -2,17 +2,22 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { connect } from "react-redux";
 import { fetchRecipe } from "../store/actions/recipeActions";
-import recipes from '../assets/recipes';
+import Axios from "axios";
+import recipes from "../assets/recipes";
 
 class Recipe extends Component {
   componentDidMount() {
-    if (this.props.recipes.length > 0) {
-      console.log('NO NEW FETCH PERFORMED')
-      this.props.fetchRecipe(this.props.recipes[this.props.match.params.id - 1]);
-    } else {
-      console.log('NEW FETCH PERFORMED')
-      this.props.fetchRecipe(recipes.hits[this.props.match.params.id - 1]);
-    }
+    console.log("NEW FETCH PERFORMED");
+    Axios.get(
+      "https://api.spoonacular.com/recipes/" +
+        this.props.match.params.id +
+        "/information?apiKey=a8a78069d78b4d5d99564bbf6316dced"
+    )
+      .then(res => {
+        console.log(res.data)
+        this.props.fetchRecipe(res.data);
+      })
+      .catch(error => console.error(error));
   }
 
   render() {

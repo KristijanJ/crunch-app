@@ -1,0 +1,29 @@
+.recipe-wrapper {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 2rem;
+}
+
+.card {
+  width: calc(50% - 2rem);
+  background: #fff;
+  padding: 1rem;
+}
+
+.image {
+  width: calc(50% - 2rem);
+  padding-bottom: calc(40% - 2rem);
+  float: left;
+}
+
+.details {
+  float: right;
+}
+
+.ingredients {
+  float: left;
+}
+
+.steps {
+  float: right;
+}

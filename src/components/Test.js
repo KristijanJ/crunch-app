@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Header from "./Header";
+import { recipe } from '../assets/recipes';
+
+import "../assets/styles/global.css";
+import "../assets/styles/recipe.css";
 
 class Test extends Component {
   render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
     return (
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
+      <>
+       <Header />
+       <div className="recipe-wrapper">
+         <div 
+          className="image card"
+          style={{
+            background: "url("+recipe.image+")",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center"
+          }}
+         ></div>
+         <div className="details card">
+           <div className="title">{recipe.title}</div>
+           
+         </div>
+         <div className="ingredients card"></div>
+         <div className="steps card"></div>
+       </div>
+      </>
     )
   }
 }

@@ -21,7 +21,7 @@ class Recipes extends Component {
         <h2>Recipes</h2>
 
         <div className="recipes">
-          {this.props.recipes === undefined ? (
+          {this.props.recipes.length === 0 ? (
             <>
               <div className="loader">Loading...</div>
               <h2>Loading...</h2>
