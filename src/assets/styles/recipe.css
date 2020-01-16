@@ -15,17 +15,19 @@
   border-radius: 25px;
   position: relative;
   z-index: 2;
+  overflow-y: scroll;
 }
 
 .single-recipe .recipe-title {
   font-size: 30px;
+  padding-bottom: 16px;
 }
 
 .single-recipe .photo {
   width: 100%;
   padding-bottom: 80%;
   border-radius: 25px;
-  margin: 20px auto;
+  margin-bottom: 20px;
 }
 
 .description {

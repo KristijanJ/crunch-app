@@ -32,7 +32,7 @@ class Recipe extends Component {
         <div className="single-recipe-wrapper">
           <div className="single-recipe">
             <div className="left-side">
-              <h1 className="recipe-title">{this.recipeName}</h1>
+            <h1 className="recipe-title">{this.recipeName}</h1>
               <div
                 className="photo"
                 style={{
