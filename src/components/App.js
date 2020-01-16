@@ -12,12 +12,7 @@ import "../assets/styles/global.css";
 
 class App extends Component {
   componentDidMount() {
-    Axios.get("https://api.spoonacular.com/recipes/search?query=chicken&apiKey=a8a78069d78b4d5d99564bbf6316dced")
-      .then(res => {
-        this.props.fetchRecipes(res.data.results);
-      })
-      .catch(error => console.error(error));
-    // this.props.fetchRecipes(recipes.results);
+    
   }
 
   render() {

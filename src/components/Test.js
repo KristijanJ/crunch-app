@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from "./Header";
-import { recipe } from '../assets/recipes';
+// import { recipe } from '../assets/recipes';
 
 import "../assets/styles/global.css";
 import "../assets/styles/recipe.css";
@@ -9,7 +9,7 @@ class Test extends Component {
   render() {
     return (
       <>
-       <Header />
+       {/* <Header />
        <div className="recipe-wrapper">
          <div 
           className="image card"
@@ -26,7 +26,7 @@ class Test extends Component {
          </div>
          <div className="ingredients card"></div>
          <div className="steps card"></div>
-       </div>
+       </div> */}
       </>
     )
   }

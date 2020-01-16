@@ -1,19 +1,26 @@
 .recipes-wrapper {
   width: 100%;
   text-align: center;
+  background: #F5F5F5;
+  position: relative;
+  height: 100vh;
 }
 
 .recipes-wrapper > h2 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  padding-top: 140px;
+  padding-bottom: 20px;
   color: #fd6721;
   font-size: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .recipes {
   width: 90%;
   text-align: center;
   margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .recipes::after {
@@ -57,7 +64,7 @@
   text-align: left;
   color: #666;
   font-size: 15px;
-  /* height: 60px; */
+  height: 60px;
   margin-bottom: 16px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -78,7 +85,7 @@
   clear: both;
 }
 
-.recipe .calories {
+.recipe .rating {
   float: left;
   cursor: pointer;
 }
@@ -92,10 +99,30 @@
   cursor: pointer;
 }
 
+.lets-cook-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #fd6721;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
 /* SLICK */
 
-.dots {
-  background: red;
+.slick-dots li button:before {
+  font-size: 8px!important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fd6721!important;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px!important;
+  color: #333!important;
 }
 
 /* LOADER */
