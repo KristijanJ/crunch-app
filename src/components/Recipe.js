@@ -76,7 +76,7 @@ class Recipe extends Component {
                     <div key={i}>
                       <p className="step">Step {i + 1}</p>
                       <p className="step-description">
-                        {this.decodeHtml(step.Description)}
+                        {this.decodeHtml(step.Description).replace(/<[^>]*>?/gm, '')}
                       </p>
                     </div>
                   ))}
