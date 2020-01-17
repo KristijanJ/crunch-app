@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 
 class Recipes extends Component {
   render() {
+    
     var settings = {
       dots: true,
       infinite: true,
@@ -16,16 +17,16 @@ class Recipes extends Component {
       slidesToShow: 3,
       slidesToScroll: 1
     };
+
     return (
       <div className="recipes-wrapper">
         <h2>Recipes</h2>
-
         <div className="recipes">
           {this.props.recipes.length === 0 ? (
-            <>
+            <div style={{ textAlign: "center" }}>
               <div className="loader">Loading...</div>
               <h2>Loading...</h2>
-            </>
+            </div>
           ) : (
             <Slider {...settings}>
               {this.props.recipes.map(recipe => (
@@ -39,10 +40,8 @@ class Recipes extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    recipes: state.recipeReducer.recipes
-  };
-};
+const mapStateToProps = state => ({
+  recipes: state.recipeReducer.recipes
+});
 
 export default connect(mapStateToProps)(Recipes);

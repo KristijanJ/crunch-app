@@ -1,7 +1,10 @@
+// PACKAGE
 import React from "react";
-import '../assets/styles/global.css';
-import '../assets/styles/header.css';
 import { Link } from "react-router-dom";
+
+// STYLES
+import "../assets/styles/global.css";
+import "../assets/styles/header.css";
 
 function Header() {
   return (

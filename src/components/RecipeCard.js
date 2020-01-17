@@ -10,15 +10,7 @@ class RecipeCard extends Component {
         <Link
           to={"/" + this.props.recipe.id}
           className="photo"
-          style={{
-            background:
-              "url(https://spoonacular.com/recipeImages/" +
-              this.props.recipe.image +
-              ")",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover"
-          }}
+          style={{background:"url(https://spoonacular.com/recipeImages/"+this.props.recipe.image +")"}}
         ></Link>
         <div className="title">
           <Link to={"/" + this.props.recipe.id}>{this.props.recipe.title}</Link>

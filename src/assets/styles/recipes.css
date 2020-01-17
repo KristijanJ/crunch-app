@@ -46,6 +46,9 @@
   padding-bottom: 70%;
   border-radius: 25px;
   display: inline-block;
+  background-size: cover!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
 }
 
 .recipe .title {
