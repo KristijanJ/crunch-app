@@ -51,37 +51,20 @@
   width: 65%;
   padding-left: 2rem;
 }
-
-.step {
-  font-size: 18px;
-  padding-top: 8px;
-  padding-bottom: 4px;
-  color: #fd6721;
-  font-weight: bold;
-}
-
-.step-description {
-  color: #666666;
-  font-size: 15px;
-}
-
-.ingredient {
-  color: #fd6721;
-  font-weight: bold;
-  float: left;
-  width: 50px;
-  text-align: center;
-}
-
-.ingredient-description {
-  color: #666666;
-  font-size: 15px;
-}
-
-.right-side-section .steps-title, .right-side-section .ingredients-title {
+.right-side-section .instructions-title, .right-side-section .ingredients-title {
   padding-bottom: 8px;
 }
 
-.right-side-section .steps-title {
+.right-side-section .instructions-title {
   padding-top: 24px;
+}
+
+.ingredients {
+  color: #666666;
+  font-size: 15px;
+}
+
+.instructions {
+  color: #666666;
+  font-size: 15px;
 }

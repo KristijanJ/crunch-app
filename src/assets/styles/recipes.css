@@ -6,6 +6,10 @@
   height: 100vh;
 }
 
+.orange {
+  color: #fd6721;
+}
+
 .recipes-wrapper > h2 {
   padding-top: 140px;
   padding-bottom: 20px;
@@ -85,18 +89,12 @@
   clear: both;
 }
 
-.recipe .rating {
+.recipe .readyInMinutes, .recipe .servings {
   float: left;
-  cursor: pointer;
 }
 
-.orange {
-  color: #fd6721;
-}
-
-.recipe .bookmark {
-  float: right;
-  cursor: pointer;
+.recipe .servings {
+  padding-left: 10px
 }
 
 .lets-cook-btn {
