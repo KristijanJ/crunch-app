@@ -1,23 +1,53 @@
+// PACKAGES
 import React, { Component } from "react";
+import Slider from "react-slick";
+import { connect } from "react-redux";
+
+// COMPONENTS
 import RecipeCard from "./RecipeCard";
+
+// STYLES
 import "../assets/styles/global.css";
 import "../assets/styles/recipes.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { connect } from "react-redux";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+};
 
 class Recipes extends Component {
   render() {
-    
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    };
-
     return (
       <div className="recipes-wrapper">
         <h2>Recipes</h2>

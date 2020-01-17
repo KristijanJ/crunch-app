@@ -1,6 +1,7 @@
 // PACKAGES
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import Axios from "axios";
 
 // COMPONENTS
@@ -8,7 +9,6 @@ import Home from "./Home";
 import Recipe from "./Recipe";
 
 // REDUX
-import { connect } from "react-redux";
 import { fetchRecipes } from "../store/actions/recipeActions";
 
 // STYLES

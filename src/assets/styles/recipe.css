@@ -75,3 +75,36 @@
   color: #666666;
   font-size: 15px;
 }
+
+@media (max-width: 650px) {
+  .single-recipe-wrapper {
+    padding-top: 12vh;
+  }
+
+  .single-recipe {
+    width: 95%;
+    margin: auto;
+    padding: 1rem 1.5rem;
+    height: 85vh;
+  }
+  .left-side {
+    float: none;
+    width: 100%;
+  }
+  .right-side {
+    float: none;
+    width: 100%;
+    padding-top: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .recipe-title {
+    font-size: 22px!important;
+  }
+  .ingredients-title, .instructions-title {
+    font-size: 18px;
+  }
+  .ingredients, .instructions {
+    font-size: 14px;
+  }
+}

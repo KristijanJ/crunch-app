@@ -56,3 +56,16 @@
 .header-content .search_user .search {
   border-right: 1px solid #494843;
 }
+
+@media (max-width: 600px) {
+  .header-content .logo {
+    font-size: 30px;
+  }
+  .header-content .logo i {
+    font-size: 25px;
+  }
+  .header-content .search_user {
+    font-size: 15px;
+    line-height: 40px;
+  }
+}

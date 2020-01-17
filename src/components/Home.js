@@ -1,8 +1,13 @@
+// PACKAGES
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+// REDUX
+import { fetchRecipe } from "../store/actions/recipeActions";
+
+// COMPONENTS
 import Header from "./Header";
 import Recipes from "./Recipes";
-import { connect } from "react-redux";
-import { fetchRecipe } from "../store/actions/recipeActions";
 
 class Home extends Component {
   componentDidMount() {
