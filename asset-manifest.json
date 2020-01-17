@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/crunch-app/static/css/main.9b7fd2cb.chunk.css",
+    "main.js": "/crunch-app/static/js/main.8c0a1ec8.chunk.js",
+    "main.js.map": "/crunch-app/static/js/main.8c0a1ec8.chunk.js.map",
+    "runtime-main.js": "/crunch-app/static/js/runtime-main.6450d6ac.js",
+    "runtime-main.js.map": "/crunch-app/static/js/runtime-main.6450d6ac.js.map",
+    "static/css/2.2eb3ca21.chunk.css": "/crunch-app/static/css/2.2eb3ca21.chunk.css",
+    "static/js/2.1ec8eaac.chunk.js": "/crunch-app/static/js/2.1ec8eaac.chunk.js",
+    "static/js/2.1ec8eaac.chunk.js.map": "/crunch-app/static/js/2.1ec8eaac.chunk.js.map",
+    "index.html": "/crunch-app/index.html",
+    "precache-manifest.aaf8d8677c19e20398c96e1edc7be262.js": "/crunch-app/precache-manifest.aaf8d8677c19e20398c96e1edc7be262.js",
+    "service-worker.js": "/crunch-app/service-worker.js",
+    "static/css/2.2eb3ca21.chunk.css.map": "/crunch-app/static/css/2.2eb3ca21.chunk.css.map",
+    "static/css/main.9b7fd2cb.chunk.css.map": "/crunch-app/static/css/main.9b7fd2cb.chunk.css.map",
+    "static/js/2.1ec8eaac.chunk.js.LICENSE": "/crunch-app/static/js/2.1ec8eaac.chunk.js.LICENSE",
+    "static/media/slick-theme.css": "/crunch-app/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6450d6ac.js",
+    "static/css/2.2eb3ca21.chunk.css",
+    "static/js/2.1ec8eaac.chunk.js",
+    "static/css/main.9b7fd2cb.chunk.css",
+    "static/js/main.8c0a1ec8.chunk.js"
+  ]
+}
