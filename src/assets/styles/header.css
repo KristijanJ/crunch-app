@@ -4,10 +4,10 @@
   width: 100%;
   background: #fff;
   border-radius: 0 0 25px 25px;
-  box-shadow: 5px 5px 10px #ddd;
+  box-shadow: 3px 3px 20px #969696;
   position: absolute;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .header-content {
@@ -46,15 +46,36 @@
   color: #494843;
   float: right;
   margin-right: 16px;
-  line-height: 60px;
+  position: relative;
+  top: 20px;
 }
 
 .header-content .search_user > * {
   padding: 0 16px;
+  transition: 200ms;
 }
 
-.header-content .search_user .search {
-  border-right: 1px solid #494843;
+form {
+  display: inline-block;
+  width: 0px;
+}
+
+form.open {
+  width: 300px;
+}
+
+form input {
+  width: 0%;
+  opacity: 0;
+  padding: 4px 8px;
+  float: right;
+  outline: none;
+  transition: 300ms;
+}
+
+form input.open {
+  width: 100%;
+  opacity: 1;
 }
 
 @media (max-width: 600px) {

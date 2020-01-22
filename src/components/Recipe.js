@@ -20,7 +20,7 @@ class Recipe extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header {...this.props} />
         {this.props.recipe ? (
           <div className="single-recipe-wrapper">
             <div className="single-recipe">
@@ -47,9 +47,10 @@ class Recipe extends Component {
                   </div>
                 </div>
                 <div className="right-side-section">
-                  <h2 className="instructions-title">How to make it</h2>
+                {this.props.recipe.analyzedInstructions.length > 0 && <h2 className="instructions-title">How to make it</h2>}
                   <div className="instructions">
-                    {this.props.recipe.analyzedInstructions[0].steps.map((instruction, i) => (
+                    {this.props.recipe.analyzedInstructions.length > 0 && 
+                      this.props.recipe.analyzedInstructions[0].steps.map((instruction, i) => (
                       <p key={i}>
                         <span className="orange">{instruction.number}. </span>
                         <span>{instruction.step}</span>

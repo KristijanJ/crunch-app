@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 
 class RecipeCard extends Component {
   render() {
+    const query = this.props.match.params.query;
+    const id = this.props.recipe.id;
+
     return (
       <div className="recipe">
         <Link
-          to={"/" + this.props.recipe.id}
+          to={`/${query}/${id}`}
           className="photo"
           style={{background:"url(https://spoonacular.com/recipeImages/"+this.props.recipe.image +")"}}
         ></Link>
         <div className="title">
-          <Link to={"/" + this.props.recipe.id}>{this.props.recipe.title}</Link>
+          <Link to={`/${query}/${id}`}>{this.props.recipe.title}</Link>
         </div>
         <div className="details">
           <div className="readyInMinutes">
@@ -26,7 +29,7 @@ class RecipeCard extends Component {
             {this.props.recipe.servings === 1 ? <span>dish</span> : <span>dishes</span>}
           </div>
         </div>
-        <Link className="lets-cook-btn" to={"/" + this.props.recipe.id}>
+        <Link className="lets-cook-btn" to={`/${query}/${id}`}>
           Let's Cook!
         </Link>
       </div>
