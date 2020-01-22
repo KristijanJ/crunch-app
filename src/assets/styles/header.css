@@ -78,6 +78,10 @@ form input.open {
   opacity: 1;
 }
 
+.back {
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .header-content .logo {
     font-size: 30px;

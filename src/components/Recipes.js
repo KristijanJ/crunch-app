@@ -55,33 +55,24 @@ const settings = {
 class Recipes extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      query: ''
-    }
+    this.state = { query: "" }
   }
 
   componentDidMount() {
-    if (this.props.recipes.length <= 0) {
-      Axios.get("https://api.spoonacular.com/recipes/search?query="+this.props.match.params.query+"&number=10&apiKey=a8a78069d78b4d5d99564bbf6316dced")
-      .then(res => {
-        this.setState({ query: this.props.match.params.query });
-        this.props.fetchRecipes(res.data.results);
-      })
-      .catch(error => console.error(error));
-    }
-
+    if (this.props.recipes.length <= 0) this.fetchTheRecipes();
     this.props.fetchRecipe(null);
   }
-
   componentDidUpdate() {
-    if (this.props.match.params.query !== this.state.query) {
-      Axios.get("https://api.spoonacular.com/recipes/search?query="+this.props.match.params.query+"&number=10&apiKey=a8a78069d78b4d5d99564bbf6316dced")
-      .then(res => {
-        this.setState({ query: this.props.match.params.query });
-        this.props.fetchRecipes(res.data.results);
-      })
-      .catch(error => console.error(error));
-    }
+    if (this.props.match.params.query !== this.state.query) this.fetchTheRecipes();
+  }
+
+  fetchTheRecipes() {
+    Axios.get("https://api.spoonacular.com/recipes/search?query="+this.props.match.params.query+"&number=10&apiKey=a8a78069d78b4d5d99564bbf6316dced")
+    .then(res => {
+      this.setState({ query: this.props.match.params.query });
+      this.props.fetchRecipes(res.data.results);
+    })
+    .catch(error => console.error(error));
   }
 
   render() {

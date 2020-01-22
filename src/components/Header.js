@@ -1,4 +1,4 @@
-// PACKAGE
+// PACKAGES
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,16 +9,10 @@ import "../assets/styles/header.css";
 class Header extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      input: "",
-      toggleSearch: false
-    };
+    this.state = { input: "", toggleSearch: false };
   }
 
-  handleOnChange = e => {
-    this.setState({ input: e.target.value });
-  };
+  handleOnChange = e => this.setState({ input: e.target.value });
 
   handleSubmit = e => {
     e.preventDefault();
@@ -26,15 +20,9 @@ class Header extends Component {
     this.setState({ input: "", toggleSearch: false });
   };
 
-  goBack = () => {
-    this.props.history.goBack();
-  };
-
-  toggleSearch = () => {
-    this.setState({
-      toggleSearch: !this.state.toggleSearch
-    });
-  };
+  toggleSearch = () => this.setState({ toggleSearch: !this.state.toggleSearch });
+  
+  goBack = () => this.props.history.goBack();
 
   render() {
     return (
@@ -49,8 +37,8 @@ class Header extends Component {
               <>
                 <i className="fas fa-search search" onClick={this.toggleSearch}></i>
                 <form
-                  className={this.state.toggleSearch ? "open" : ""}
                   onSubmit={this.handleSubmit}
+                  className={this.state.toggleSearch ? "open" : ""}
                 >
                   <input
                     type="text"
@@ -61,10 +49,7 @@ class Header extends Component {
                 </form>
               </>
             ) : (
-              <>
-                <i className="fas fa-chevron-circle-left" onClick={this.goBack}></i>
-                {/* <span>Back</span> */}
-              </>
+              <i className="fas fa-chevron-circle-left back" onClick={this.goBack}></i>
             )}
           </div>
         </div>

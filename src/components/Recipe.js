@@ -1,18 +1,21 @@
+// PACKAGES
 import React, { Component } from "react";
-import Header from "./Header";
 import { connect } from "react-redux";
+import Axios from "axios";
+
+// COMPONENTS
+import Header from "./Header";
+
+// REDUX
 import { fetchRecipe } from "../store/actions/recipeActions";
+
+// STYLES
 import "../assets/styles/global.css";
 import "../assets/styles/recipe.css";
-import Axios from "axios";
 
 class Recipe extends Component {
   componentDidMount() {
-    Axios.get(
-      "https://api.spoonacular.com/recipes/" +
-        this.props.match.params.id +
-        "/information?apiKey=a8a78069d78b4d5d99564bbf6316dced"
-    )
+    Axios.get(`https://api.spoonacular.com/recipes/${this.props.match.params.id}/information?apiKey=a8a78069d78b4d5d99564bbf6316dced`)
       .then(res => this.props.fetchRecipe(res.data))
       .catch(error => console.error(error));
   }
@@ -29,8 +32,7 @@ class Recipe extends Component {
                 <h1 className="recipe-title">{this.props.recipe.title}</h1>
                 <div className="photo" style={{background: "url(" + this.props.recipe.image + ")"}}></div>
                 <div className="description">
-                  <p>You can prepare this meal in <span className="orange">{this.props.recipe.readyInMinutes}</span> minutes.</p>
-                  <p>Once done, you will be able to enjoy <span className="orange">{this.props.recipe.servings}</span> beautiful servings.</p>
+                  <p>You can prepare this meal in <span className="orange">{this.props.recipe.readyInMinutes}</span> minutes. Once done, you can enjoy <span className="orange">{this.props.recipe.servings}</span> beautiful servings.</p>
                   <p>The Health Score of the meal is <span className="orange">{this.props.recipe.healthScore}</span>.</p>
                 </div>
               </div>

@@ -1,7 +1,10 @@
+// PACKAGES
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+// STYLES
 import "../assets/styles/global.css";
 import "../assets/styles/recipes.css";
-import { Link } from "react-router-dom";
 
 class RecipeCard extends Component {
   render() {
