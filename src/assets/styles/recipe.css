@@ -7,6 +7,7 @@
 
 .single-recipe {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
   padding: 2rem 3rem;
   height: 80vh;
@@ -15,7 +16,7 @@
   border-radius: 25px;
   position: relative;
   z-index: 2;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .single-recipe .recipe-title {

@@ -1,6 +1,7 @@
 const initState = {
   recipes: [],
-  recipe: null
+  recipe: null,
+  isLoading: true,
 };
 
 const recipeReducer = (state = initState, action) => {
@@ -8,13 +9,19 @@ const recipeReducer = (state = initState, action) => {
     case "FETCH_RECIPES":
       return {
         ...state,
-        recipes: action.payload
+        recipes: action.payload,
       };
 
     case "FETCH_RECIPE":
       return {
         ...state,
         recipe: action.payload
+      };
+
+    case "SET_LOADING":
+      return {
+        ...state,
+        isLoading: action.payload
       };
 
     default:

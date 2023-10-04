@@ -1,6 +1,6 @@
 // PACKAGES
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 // COMPONENTS
 import Home from "./Home";
@@ -10,16 +10,26 @@ import Recipes from "./Recipes";
 // STYLES
 import "../assets/styles/global.css";
 
-class App extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route path="/:query/:id" render={props => <Recipe {...props} />} />
-        <Route path="/:query" render={(props) => <Recipes {...props} />} />
-        <Route path="/" render={(props) => <Home {...props} />} />
-      </Switch>
-    );
-  }
-}
+const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  return (
+    <Routes>
+      <Route
+        path="/:query/:id"
+        element={<Recipe location={location} navigate={navigate} />}
+      />
+      <Route
+        path="/:query"
+        element={<Recipes location={location} navigate={navigate} />}
+      />
+      <Route
+        path="/"
+        element={<Home location={location} navigate={navigate} />}
+      />
+    </Routes>
+  );
+};
 
 export default App;

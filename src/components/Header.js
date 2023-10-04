@@ -9,20 +9,24 @@ import "../assets/styles/header.css";
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = { input: "", toggleSearch: false };
+    this.state = {
+      input: props.location.pathname.replace("/", ""),
+      toggleSearch: false,
+    };
   }
 
-  handleOnChange = e => this.setState({ input: e.target.value });
+  handleOnChange = (e) => this.setState({ input: e.target.value });
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    this.props.history.replace(this.state.input);
-    this.setState({ input: "", toggleSearch: false });
+    this.props.navigate(this.state.input);
+    this.setState({ toggleSearch: false });
   };
 
-  toggleSearch = () => this.setState({ toggleSearch: !this.state.toggleSearch });
-  
-  goBack = () => this.props.history.goBack();
+  toggleSearch = () =>
+    this.setState({ toggleSearch: !this.state.toggleSearch });
+
+  goBack = () => this.props.navigate(-1);
 
   render() {
     return (
@@ -35,7 +39,10 @@ class Header extends Component {
           <div className="search_user">
             {this.props.type === "home" ? (
               <>
-                <i className="fas fa-search search" onClick={this.toggleSearch}></i>
+                <i
+                  className="fas fa-search search"
+                  onClick={this.toggleSearch}
+                ></i>
                 <form
                   onSubmit={this.handleSubmit}
                   className={this.state.toggleSearch ? "open" : ""}
@@ -49,7 +56,10 @@ class Header extends Component {
                 </form>
               </>
             ) : (
-              <i className="fas fa-chevron-circle-left back" onClick={this.goBack}></i>
+              <i
+                className="fas fa-chevron-circle-left back"
+                onClick={this.goBack}
+              ></i>
             )}
           </div>
         </div>
